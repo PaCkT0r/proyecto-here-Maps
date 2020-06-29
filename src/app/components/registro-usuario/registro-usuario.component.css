@@ -1,0 +1,68 @@
+@import '~normalize.css';
+.btn{
+    background-color: #fd9d31;
+    border-color: #fd9d31;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 15px;
+}
+.formulario{
+    cursor:pointer;
+    display: block;
+    width:20%;
+    margin:  auto;
+    text-align:left;
+}
+
+input{
+    margin-top: 15px;
+    margin-bottom: 15px;
+    background-color: #3c3c3c;
+    border-color: #4a85b2;
+    color: gray;
+}
+::placeholder{
+    color: white;
+}
+h3{
+    color: white;
+    padding:2px;
+    cursor:pointer;
+    display:block;
+    margin:  auto;
+    text-align:center;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+
+}
+img{
+    width: 30%;
+    height: 20%;
+        display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/*icono dentro de input*/
+
+.inner-addon {
+    position: relative;
+  }
+  .inner-addon .glyphicon {
+    position: absolute;
+    padding: 10px;
+    pointer-events: none;
+    color:  #4a85b2;
+  }
+  .left-addon .glyphicon {
+    left: 0px;
+  }
+  .right-addon .glyphicon {
+    right: 0px;
+  }
+  .left-addon input {
+    padding-left: 35px;
+  }
+  .right-addon input {
+    padding-right: 35px;
+  }
