@@ -5,32 +5,44 @@
 <section>
     <article>
         <h3>Registrarse</h3>
-        <form class="formulario">
+        <form class="formulario" autocomplete="off" (ngsubmit)="guardar(forma)" #forma="ngForm">
             <div class="inner-addon left-addon">
                 <i class="glyphicon fa fa-user-circle-o" aria-hidden="true"></i>
-                <input type="text" class="form-control" placeholder="Nombre" name="nombre" ngModel="name" required>
+                <input type="text" class="form-control input-activo" ngModel
+                    [class.is-invalid]="nombre.invalid && nombre.touched" name="nombre" #nombre="ngModel"
+                    placeholder="Nombre" minlength="5" required>
             </div>
             <div class="inner-addon left-addon">
                 <i class="glyphicon fa fa-user-circle-o" aria-hidden="true"></i>
-                <input type="text" class="form-control" placeholder="Apellido">
+                <input type="text" class="form-control input-activo" ngModel minlength="5"
+                    [class.is-invalid]="apellido.invalid && apellido.touched" name="apellido" #apellido="ngModel"
+                    placeholder="Apellido" required>
             </div>
             <div class="inner-addon left-addon">
                 <i class="glyphicon fa fa-envelope" aria-hidden="true"></i>
-                <input type="email" class="form-control" placeholder="Correo electrónico">
+                <input type="email" class="form-control input-activo" ngModel
+                    [class.is-invalid]="correo.invalid && correo.touched" name="correo" #correo="ngModel"
+                    pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" placeholder="Correo electrónico" required>
             </div>
             <div class="inner-addon left-addon">
                 <i class="glyphicon fa fa-phone" aria-hidden="true"></i>
-                <input type="tel" class="form-control" required minlength="10" placeholder="Teléfono">
+                <input type="tel" class="form-control input-activo" required minlength="10" ngModel
+                    [class.is-invalid]="telefono.invalid && telefono.touched" name="telefono" #telefono="ngModel"
+                    placeholder="Teléfono" required>
             </div>
             <div class="inner-addon left-addon">
                 <i class="glyphicon fa fa-lock" aria-hidden="true"></i>
-                <input type="password" class="form-control" placeholder="Contraseña">
+                <input type="password" class="form-control input-activo" ngModel minlength="5"
+                    [class.is-invalid]="contrsenauno.invalid && contrsenauno.touched" name="contrsenauno"
+                    #contrsenauno="ngModel" placeholder="Contraseña" required>
             </div>
             <div class="inner-addon left-addon">
                 <i class="glyphicon fa fa-lock" aria-hidden="true"></i>
-                <input type="password" class="form-control" placeholder="Repetir contraseña">
+                <input type="password" class="form-control input-activo" ngModel minlength="5"
+                    [class.is-invalid]="contrsenados.invalid && contrsenados.touched" name="contrsenados"
+                    #contrsenados="ngModel" placeholder="Repetir contraseña" required>
             </div>
-            <button class="btn btn-info">Guardar</button>
+            <button type="submit" class="btn btn-outline-dark boton-activo">Guardar</button>
         </form>
     </article>
 </section>

@@ -1,0 +1,35 @@
+<header>
+    <figure><img src="../../../assets/img/logo-Here-Maps.JPG" alt="Here Maps"></figure>
+    <div class="progress" *ngIf="activarProgress!=true">
+        <div class="progress-bar progress-bar-striped bg-warning progress-bar-animated" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+      </div>
+</header>
+<nav></nav>
+<section>  
+    <article *ngIf="flag==false">
+        <h3>Login</h3>
+        <form class="formulario" autocomplete="off" (ngsubmit)="guardar(forma)" #forma="ngForm">
+            <div class="inner-addon left-addon">
+                <i class="glyphicon fa fa-envelope" aria-hidden="true"></i>
+                <input type="text" class="form-control input-activo" ngModel
+                    [class.is-invalid]="correo.invalid && correo.touched" name="correo" #correo="ngModel"
+                    placeholder="Correo electrónico" minlength="5" required>
+            </div>
+            <div class="inner-addon left-addon">
+                <i class="glyphicon fa fa-lock" aria-hidden="true"></i>
+                <input type="text" class="form-control input-activo" ngModel
+                    [class.is-invalid]="contrasena.invalid && contrasena.touched" name="contrasena" #contrasena="ngModel"
+                    placeholder="Contraseña" minlength="5" required>
+            </div>
+            <div>
+                <a href="">¿Olvidaste tu contraseña?</a>
+            </div>
+            <div class="PonerVertical col-sm-6">
+                <button type="submit" class="btn btn-outline-dark boton-activo" (click)="ocultarForm()" >INGRESAR</button>
+            </div>
+            <div class="PonerVertical col-sm-6">
+                <button type="submit" class="btn btn-outline-dark boton-activo">REGISTRAR</button>
+            </div>
+        </form>
+    </article>
+</section>

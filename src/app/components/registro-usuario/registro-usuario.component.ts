@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ServicesService } from '../../Services/services.service';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, NgForm, NgModel } from '@angular/forms';
 
 
 
@@ -12,11 +11,13 @@ import { FormsModule } from '@angular/forms';
 })
 export class RegistroUsuarioComponent implements OnInit {
 
-  nombre: string;
-
-  constructor(private _service: ServicesService) { }
+  constructor() { }
 
   ngOnInit(): void {
-    
+  }
+
+  guardar(forma: NgForm){
+    console.log(forma.status);
+    console.log('forma');
   }
 }

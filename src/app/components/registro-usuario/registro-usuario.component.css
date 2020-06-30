@@ -3,9 +3,18 @@
     background-color: #fd9d31;
     border-color: #fd9d31;
     display: block;
+    color:white;
     margin-left: auto;
     margin-right: auto;
     margin-top: 15px;
+    border-radius: 20px 20px 20px 20px;
+}
+.boton-activo:active{
+  opacity: 0.2;
+}
+
+.input-activo:active{
+  border-radius: 20px;
 }
 .formulario{
     cursor:pointer;
@@ -33,6 +42,10 @@ h3{
     margin:  auto;
     text-align:center;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -ms-user-select:none;
 
 }
 img{
