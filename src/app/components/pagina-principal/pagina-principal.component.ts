@@ -16,7 +16,6 @@ export class PaginaPrincipalComponent implements OnInit {
 
   Registro(){
     this._router.navigate(['/RegistroUsuario']);
-    console.log('Hola mundo');
   }
   ingresar(){
     this._router.navigate(['/Login']);

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { NgForm, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ServicesService } from '../../Services/services.service';
+
 
 
 @Component({
@@ -10,21 +12,42 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
+  datos: any[] = [];
+
   flag: boolean = false;
   activarProgress: boolean = true;
+  forma: NgForm;
 
-  constructor(private _router: Router) { }
+  constructor(private _router: Router, protected _servicesServices: ServicesService) { }
 
   ngOnInit(): void {
+    /*this._servicesServices.getUsers()
+    .subscribe(
+      (data) => {
+        console.log(this.datos = data['results'])
+      },
+      (error) => {
+        console.error(error);
+      }
+    );
+    */
   }
 
   guardar(forma: NgForm){
-
+    if (forma.invalid) {
+      Object.values( forma.controls ).forEach( control => {
+        control.markAsTouched();
+      });
+    }
   }
+
+  Registro(){
+    this._router.navigate(['/RegistroUsuario']);
+  }
+
   ocultarForm(){
     this.flag = true;
     this.activarProgress = false;
-    console.log('Hola mundo');
     setTimeout(() => {
       this._router.navigate(['/home']);
      }, 2000);

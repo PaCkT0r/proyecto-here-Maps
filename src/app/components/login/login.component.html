@@ -8,27 +8,32 @@
 <section>  
     <article *ngIf="flag==false">
         <h3>Login</h3>
-        <form class="formulario" autocomplete="off" (ngsubmit)="guardar(forma)" #forma="ngForm">
+        <form class="formulario" novalidate autocomplete="off" #forma="ngForm">
             <div class="inner-addon left-addon">
                 <i class="glyphicon fa fa-envelope" aria-hidden="true"></i>
                 <input type="text" class="form-control input-activo" ngModel
                     [class.is-invalid]="correo.invalid && correo.touched" name="correo" #correo="ngModel"
                     placeholder="Correo electrónico" minlength="5" required>
+                    <small *ngIf="correo.invalid && correo.touched"
+                     class="form-text text-danger">El formato incorrecto de correo!</small>
             </div>
             <div class="inner-addon left-addon">
                 <i class="glyphicon fa fa-lock" aria-hidden="true"></i>
                 <input type="text" class="form-control input-activo" ngModel
                     [class.is-invalid]="contrasena.invalid && contrasena.touched" name="contrasena" #contrasena="ngModel"
                     placeholder="Contraseña" minlength="5" required>
+                    <small *ngIf="contrasena.invalid && contrasena.touched"
+                     class="form-text text-danger"> Logitud minima de cinco caracteres</small>
             </div>
             <div>
                 <a href="">¿Olvidaste tu contraseña?</a>
             </div>
             <div class="PonerVertical col-sm-6">
-                <button type="submit" class="btn btn-outline-dark boton-activo" (click)="ocultarForm()" >INGRESAR</button>
+                <button type="button" class="btn btn-outline-dark boton-activo" (click)="forma.submitted = true; guardar(forma);">INGRESAR</button>
             </div>
+            <!-- (click)="ocultarForm()"-->
             <div class="PonerVertical col-sm-6">
-                <button type="submit" class="btn btn-outline-dark boton-activo">REGISTRAR</button>
+                <button type="button" class="btn btn-outline-dark boton-activo" (click)="Registro()">REGISTRAR</button>
             </div>
         </form>
     </article>

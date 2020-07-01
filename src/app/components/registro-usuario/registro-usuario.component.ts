@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormsModule, NgForm, NgModel } from '@angular/forms';
+import { ServicesService } from '../../Services/services.service';
+
 
 
 
@@ -11,13 +13,17 @@ import { FormsModule, NgForm, NgModel } from '@angular/forms';
 })
 export class RegistroUsuarioComponent implements OnInit {
 
-  constructor() { }
+  constructor(protected _servicesServices: ServicesService) { }
 
   ngOnInit(): void {
+    
   }
 
-  guardar(forma: NgForm){
-    console.log(forma.status);
-    console.log('forma');
+  guardarRegistro(forma: NgForm){
+    if (forma.invalid) {
+      Object.values( forma.controls ).forEach( control => {
+        control.markAsTouched();
+      });
+    }
   }
 }

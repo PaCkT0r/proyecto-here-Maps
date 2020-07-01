@@ -57,6 +57,10 @@ img{
 
 }
 
+small{
+  text-align: center;
+}
+
 .PonerVertical{
     display: inline-block;
 }
@@ -68,7 +72,7 @@ img{
     color:white;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 40%;
+    margin-top: 20%;
     border-radius: 20px 20px 20px 20px;
 }
 .boton-activo:active{
