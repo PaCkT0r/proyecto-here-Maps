@@ -6,16 +6,19 @@ img{
     margin-right: auto;
     margin-bottom: 3%;
 }
-
+/*Animación para el progress-bar*/
 .progress{
     width: 40%;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 2%;
-    -webkit-transition : width 5s ease;
-    -moz-transition : width 5s ease;
-    -o-transition : width 5s ease;
-    transition : width 5s ease;
+    animation: progress 1.5s ease-in-out forwards;
+    background-color: #fd9d31;
+}
+
+@keyframes progress{
+  from{width: 0;}
+  top{width: 100%;} 
 }
 
 .input-activo:active{

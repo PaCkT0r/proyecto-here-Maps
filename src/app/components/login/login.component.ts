@@ -17,6 +17,7 @@ export class LoginComponent implements OnInit {
   flag: boolean = false;
   activarProgress: boolean = true;
   forma: NgForm;
+  useLocalStorage: any;
 
   constructor(private _router: Router, protected _servicesServices: ServicesService) { }
 
@@ -39,6 +40,19 @@ export class LoginComponent implements OnInit {
         control.markAsTouched();
       });
     }
+    /*localStorage para poder almacenar datos en el navegador, persistan y esten disponibles
+    durante la navegación, hasta que esta información sea borrada del navegador */
+    localStorage.setItem('token','Uso de localStorage');
+    this.useLocalStorage = localStorage.getItem('token');
+    console.log(this.useLocalStorage);
+    console.log();
+    if (forma.valid) {
+      this.flag = true;
+    this.activarProgress = false;
+    setTimeout(() => {
+      this._router.navigate(['/home']);
+     }, 2000);
+    }
   }
 
   Registro(){
@@ -46,10 +60,6 @@ export class LoginComponent implements OnInit {
   }
 
   ocultarForm(){
-    this.flag = true;
-    this.activarProgress = false;
-    setTimeout(() => {
-      this._router.navigate(['/home']);
-     }, 2000);
+    
   }
 }

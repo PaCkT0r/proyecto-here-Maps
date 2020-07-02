@@ -1,5 +1,5 @@
 export class InterfazUsuario{
-    id: string;
+    id?: string;
     nombre: string;
     apellido: string;
     correo: string;

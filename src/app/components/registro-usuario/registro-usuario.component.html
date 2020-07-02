@@ -43,21 +43,21 @@
             <div class="inner-addon left-addon">
                 <i class="glyphicon fa fa-lock" aria-hidden="true"></i>
                 <input type="password" class="form-control input-activo" ngModel minlength="5"
-                    [class.is-invalid]="contrsenauno.invalid && contrsenauno.touched" name="contrsenauno"
-                    #contrsenauno="ngModel" placeholder="Contraseña" required>
-                    <small *ngIf="contrsenauno.invalid && contrsenauno.touched" 
+                    [class.is-invalid]="contrasenauno.invalid && contrasenauno.touched" name="contrasenauno"
+                    #contrasenauno="ngModel" placeholder="Contraseña" required>
+                    <small *ngIf="contrasenauno.invalid && contrasenauno.touched" 
                     class="form-text text-danger">Longitud maxima de 5 caracteres!</small>
             </div>
             <div class="inner-addon left-addon">
                 <i class="glyphicon fa fa-lock" aria-hidden="true"></i>
                 <input type="password" class="form-control input-activo" ngModel minlength="5"
-                    [class.is-invalid]="contrsenados.invalid && contrsenados.touched" name="contrsenados"
-                    #contrsenados="ngModel" placeholder="Repetir contraseña" required>
-                    <small *ngIf="contrsenados.invalid && contrsenados.touched" 
+                    [class.is-invalid]="contrasenados.invalid && contrasenados.touched" name="contrasenados"
+                    #contrasenados="ngModel" placeholder="Repetir contraseña" required>
+                    <small *ngIf="contrasenados.invalid && contrasenados.touched" 
                     class="form-text text-danger">Longitud maxima de 5 caracteres!</small>
             </div>
             <!--Un botón siempre debe ser hijo de un form si se quiere utilizar onSubmit o ngSubmit-->
-            <button type="submit" class="btn btn-outline-dark boton-activo" (click)="guardarRegistro(forma)">Guardar</button>
+            <button type="button" class="btn btn-outline-dark boton-activo" (click)="guardarRegistro(forma)">Guardar</button>
         </form>
     </article>
 </section>

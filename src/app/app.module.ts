@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { InterfazUsuario } from './Services/interface.User';
+
 
 //components
 import { AppRoutingModule } from './app-routing.module';
@@ -25,7 +27,8 @@ import { HttpClientModule } from '@angular/common/http';
     HttpClientModule
     
   ],
-  providers: [],
+  providers: [
+    InterfazUsuario],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

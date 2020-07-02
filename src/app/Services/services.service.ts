@@ -27,4 +27,13 @@ export class ServicesService {
     })
     return this._http.get(this.apiURL + '/usuario', {headers});
   }
+
+  InsertNewUser(interfazusuario: InterfazUsuario){
+    let headers = new HttpHeaders({
+      'token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjpbeyJpZF91c3VhcmlvIjozNSwibm9tYnJlIjoicGF0byIsImFwZWxsaWRvIjoicGF0byIsImNvcnJlbyI6InBhdG9AZ21haWwuY29tIiwiY29udHJhc2XDsWEiOiIkMmEkMTAkejVoRFguUUNHM2dnNnE3QzVHSXYvLmVFU0xTcWNVZjNWTEUwaDl3YzRjbExKMjQuOFB6Wi4iLCJpbWciOm51bGwsInRlbGVmb25vIjoiNDE0MTEzNDQ0NSJ9XSwiaWF0IjoxNTkzMDE3ODIxLCJleHAiOjE1OTMxOTA2MjF9.559W1jiBj1-EIE7qN1eaB2M8BUHXpV7VTlFEUHnuk-8'
+    })
+    let body = {interfazusuario}
+    return this._http.post(`${this.apiURL}/RegistroUsuario`, body, {headers})
+  }
+  
 }
