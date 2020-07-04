@@ -1,8 +1,0 @@
-{
-    "/api/*": {
-      "target": "http://itsmarts.duckdns.org/apiComercio",
-      "secure": false,
-      "logLevel": "debug",
-      "changeOrigin": true
-    }
-  }

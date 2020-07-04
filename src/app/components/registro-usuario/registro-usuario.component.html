@@ -9,52 +9,28 @@
             <div class="inner-addon left-addon">
                 <i class="glyphicon fa fa-user-circle-o" aria-hidden="true"></i>
                 <!--Validación de campos con el atributo CLASS, NAME, NGMODEL-->
-                <input type="text" class="form-control input-activo" ngModel
-                    [class.is-invalid]="nombre.invalid && nombre.touched" name="nombre" #nombre="ngModel"
-                    placeholder="Nombre" required>
+                <input type="text" class="form-control input-activo"  placeholder="Nombre">
                     <!--Small utlizado para validar y mostrar mensaje del por que esta dando el error-->
-                    <small *ngIf="nombre.invalid && nombre.touched" 
-                    class="form-text text-danger">No se ha ingresado un nombre!</small>
             </div>
             <div class="inner-addon left-addon">
                 <i class="glyphicon fa fa-user-circle-o" aria-hidden="true"></i>
-                <input type="text" class="form-control input-activo" ngModel minlength="5"
-                    [class.is-invalid]="apellido.invalid && apellido.touched" name="apellido" #apellido="ngModel"
-                    placeholder="Apellido" required>
-                    <small *ngIf="apellido.invalid && apellido.touched" 
-                    class="form-text text-danger">No se ha ingresado un apellido!</small>
+                <input type="text" class="form-control input-activo"  minlength="5" placeholder="Apellido">
             </div>
             <div class="inner-addon left-addon">
                 <i class="glyphicon fa fa-envelope" aria-hidden="true"></i>
-                <input type="email" class="form-control input-activo" ngModel
-                    [class.is-invalid]="correo.invalid && correo.touched" name="correo" #correo="ngModel"
-                    pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" placeholder="Correo electrónico" required>
-                    <small *ngIf="correo.invalid && correo.touched" 
-                    class="form-text text-danger">El formato incorrecto de correo!</small>
+                <input type="email" class="form-control input-activo"  placeholder="Correo electrónico">
             </div>
             <div class="inner-addon left-addon">
                 <i class="glyphicon fa fa-phone" aria-hidden="true"></i>
-                <input type="tel" class="form-control input-activo" required minlength="10" ngModel
-                    [class.is-invalid]="telefono.invalid && telefono.touched" name="telefono" #telefono="ngModel"
-                    placeholder="Teléfono" required>
-                    <small *ngIf="telefono.invalid && telefono.touched" 
-                    class="form-text text-danger">Logitud maxima de 10 digitos!</small>
+                <input type="tel" class="form-control input-activo" required minlength="10"  placeholder="Teléfono">
             </div>
             <div class="inner-addon left-addon">
                 <i class="glyphicon fa fa-lock" aria-hidden="true"></i>
-                <input type="password" class="form-control input-activo" ngModel minlength="5"
-                    [class.is-invalid]="contrasenauno.invalid && contrasenauno.touched" name="contrasenauno"
-                    #contrasenauno="ngModel" placeholder="Contraseña" required>
-                    <small *ngIf="contrasenauno.invalid && contrasenauno.touched" 
-                    class="form-text text-danger">Longitud maxima de 5 caracteres!</small>
+                <input type="password" class="form-control input-activo"  minlength="5" placeholder="Contraseña">
             </div>
             <div class="inner-addon left-addon">
                 <i class="glyphicon fa fa-lock" aria-hidden="true"></i>
-                <input type="password" class="form-control input-activo" ngModel minlength="5"
-                    [class.is-invalid]="contrasenados.invalid && contrasenados.touched" name="contrasenados"
-                    #contrasenados="ngModel" placeholder="Repetir contraseña" required>
-                    <small *ngIf="contrasenados.invalid && contrasenados.touched" 
-                    class="form-text text-danger">Longitud maxima de 5 caracteres!</small>
+                <input type="password" class="form-control input-activo"  minlength="5" placeholder="Repetir contraseña">
             </div>
             <!--Un botón siempre debe ser hijo de un form si se quiere utilizar onSubmit o ngSubmit-->
             <button type="button" class="btn btn-outline-dark boton-activo" (click)="guardarRegistro(forma)">Guardar</button>
